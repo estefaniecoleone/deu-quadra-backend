@@ -15,7 +15,6 @@ import java.util.Optional;
     @Service
     public class CourtsServiceImpl implements CourtsService {
 
-        //@Autowired
         @Autowired
         private CourtsRepository courtsRepository;
 
@@ -44,6 +43,11 @@ import java.util.Optional;
             courtsRepository.deleteById(id);
         }
 
-
+        
+        @Override
+        public List<CourtsModel> findByProximity(Double minLat, Double maxLat, Double minLon, Double maxLon){
+        	return courtsRepository.findByProximity(minLat, maxLat, minLon, maxLon);
+        	
+        }
 
     }

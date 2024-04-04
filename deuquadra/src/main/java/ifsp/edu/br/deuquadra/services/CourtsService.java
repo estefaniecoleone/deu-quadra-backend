@@ -18,5 +18,6 @@ public interface CourtsService {
 
     void deleteById(Integer id);
 
+	List<CourtsModel> findByProximity(Double minLat, Double maxLat, Double minLon, Double maxLon);
 
 }
